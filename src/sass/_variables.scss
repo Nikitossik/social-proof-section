@@ -1,0 +1,36 @@
+@use "sass:map";
+
+$primary-c: hsl(300, 43%, 22%);
+$accent-c: hsl(333, 80%, 67%);
+
+$neu-dark-grayish-magenta: hsl(303, 10%, 53%);
+$neu-light-grayish-magenta: hsl(300, 24%, 96%);
+
+//spacing
+
+$base-margin: 1rem;
+
+// desktop layout spacing
+
+$rating-hor-margin: 3rem;
+$testimonial-vert-margin: 1rem;
+
+$colors: ("primary": $primary-c,
+    "accent": $accent-c,
+    "secondary": $neu-dark-grayish-magenta,
+    "white": #fff);
+
+@each $key,
+$val in $colors {
+    .text-#{$key} {
+        color: $val;
+    }
+}
+
+@for $i from 4 through 7 {
+    @if $i !=6 {
+        .fw-#{$i*100} {
+            font-weight: $i*100;
+        }
+    }
+}
