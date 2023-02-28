@@ -33,6 +33,7 @@ body {
 
     @media (min-width: 68.75em) {
         max-width: rem(1148);
+        padding: 0 1.5rem;
         display: grid;
         align-content: center;
         grid-template-columns: minmax(auto, rem(445)) 1fr;
@@ -50,7 +51,8 @@ body {
 .title {
     font-weight: 700;
     font-size: fluid(40, 56, 320, 1110); //clamp
-    letter-spacing: rem(-1.42857);
+    line-height: 0.9;
+    letter-spacing: rem(-2);
     margin-bottom: $base-margin;
 }
 
@@ -99,7 +101,8 @@ body {
 
     @media (min-width: 68.75em) {
         grid-column: 1 / -1;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(rem(350), 1fr));
+        grid-template-rows: 1fr;
         gap: rem(30);
     }
 }
@@ -125,11 +128,12 @@ body {
 
     &__body {
         line-height: 1.3;
+        letter-spacing: rem(-0.303571);
     }
 
     &__avatar {
         flex: 0 0 rem(40);
-        height: rem(40);
+        min-height: rem(40);
         @extend %rounded;
     }
 
